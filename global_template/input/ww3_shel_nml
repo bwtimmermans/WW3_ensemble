@@ -1,0 +1,65 @@
+! -------------------------------------------------------------------- !
+! WAVEWATCH III - ww3_shel.nml - single-grid model                     !
+! -------------------------------------------------------------------- !
+
+! -------------------------------------------------------------------- !
+! Define top-level model parameters via DOMAIN_NML namelist
+! -------------------------------------------------------------------- !
+&DOMAIN_NML
+  DOMAIN%START  = '<start_year><start_month>01 000000'
+  DOMAIN%STOP   = '<stop_year><stop_month><stop_day> 000000'
+/
+
+! -------------------------------------------------------------------- !
+&INPUT_NML
+  INPUT%FORCING%WINDS         = 'T'
+  INPUT%FORCING%CURRENTS      = 'F'
+  INPUT%FORCING%ICE_CONC      = 'T'
+/
+
+! -------------------------------------------------------------------- !
+! Define the output types point parameters via OUTPUT_TYPE_NML namelist
+! -------------------------------------------------------------------- !
+! Outputs below are basics for wave trials and verification
+!  TYPE%FIELD%LIST = 'DPT WND ICE HS T02 T0M1 T01 TP DIR SPR DP PHS PTP PEP PDIR PSPR PT01 PT02 CHA TAW MSS UST USS'
+&OUTPUT_TYPE_NML
+  TYPE%FIELD%LIST = 'HS T02 T0M1 T01 TP DIR SPR DP PHS PTP PDIR PSPR TWS MSS USS CGE WCC WCM WCH WND'
+  TYPE%POINT%FILE = 'points'
+/
+! Additional fields for coupling/partitioning tests
+!    CUR TWO PTM10'
+
+! -------------------------------------------------------------------- !
+! Define output dates via OUTPUT_DATE_NML namelist
+! -------------------------------------------------------------------- !
+&OUTPUT_DATE_NML
+  DATE%FIELD%START     = '<start_year><start_month>01 000000'
+  DATE%FIELD%STRIDE    = '3600'
+  DATE%FIELD%STOP      = '<stop_year><stop_month><stop_day> 000000'
+
+  DATE%POINT%START     = '<start_year><start_month>01 000000'
+  DATE%POINT%STRIDE    = '3600'
+  DATE%POINT%STOP      = '<stop_year><stop_month><stop_day> 000000'
+
+  DATE%RESTART%START   = '<start_year><start_month>01 000000'
+  DATE%RESTART%STRIDE  = '<restart_stride>'
+  DATE%RESTART%STOP    = '<stop_year><stop_month><stop_day> 000000'
+
+  DATE%BOUNDARY%START  =  '<start_year><start_month>01 000000'
+  DATE%BOUNDARY%STRIDE =  '3600'
+  DATE%BOUNDARY%STOP   =  '<stop_year><stop_month><stop_day> 000000'
+/
+
+! -------------------------------------------------------------------- !
+! Define homogeneous input via HOMOG_COUNT_NML and HOMOG_INPUT_NML namelist
+! -------------------------------------------------------------------- !
+&HOMOG_COUNT_NML
+/
+
+&HOMOG_INPUT_NML
+/
+
+! -------------------------------------------------------------------- !
+! WAVEWATCH III - end of namelist                                      !
+! -------------------------------------------------------------------- !
+

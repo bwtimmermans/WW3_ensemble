@@ -1,0 +1,109 @@
+! -------------------------------------------------------------------- !
+! Grid input file for 3/6/12/25km SMC grid Global configuration.
+!
+!  Modification History
+! ======================
+!  18-Dec-2012  frjl  Adapted for SMC grid test
+!  01-Feb-2014  frjl  Modified for WAM4 source terms.
+!  02-Jul-2015  frjl  Modified for Cray machine runs.
+!  11-Feb-2016  frey  Added boundary points for operational models.
+!  22-Feb-2016  frey  Added PTM partitioning namelist variable and 
+!                     cleaned up for operational implementation.
+!  18-Jan-2017  frxs  Added new boundary points for NWS wave model
+!  21-Mar-2018  frey  Added BCs for AG20 model.
+!  31-May-2019  frxs  Revised grid and tuning at GW1.0.
+!  03-Oct-2019  frey  Moved to namelist format input file
+! -------------------------------------------------------------------- !
+!
+! -------------------------------------------------------------------- !
+! Define the spectrum parameterization via SPECTRUM_NML namelist
+! -------------------------------------------------------------------- !
+&SPECTRUM_NML
+  SPECTRUM%XFR        =  1.1
+  SPECTRUM%FREQ1      =  0.04118
+  SPECTRUM%NK         =  30
+  SPECTRUM%NTH        =  24
+/
+
+! -------------------------------------------------------------------- !
+! Define the run parameterization via RUN_NML namelist
+! -------------------------------------------------------------------- !
+&RUN_NML
+  RUN%FLCX            =  T
+  RUN%FLCY            =  T
+  RUN%FLCTH           =  T
+  RUN%FLCK            =  F
+  RUN%FLSOU           =  T
+/
+
+! -------------------------------------------------------------------- !
+! Define the timesteps parameterization via TIMESTEPS_NML namelist
+! -------------------------------------------------------------------- !
+&TIMESTEPS_NML
+  TIMESTEPS%DTMAX     =  1200.
+  TIMESTEPS%DTXY      =  300.
+  TIMESTEPS%DTKTH     =  300.
+  TIMESTEPS%DTMIN     =  300.
+/
+
+! -------------------------------------------------------------------- !
+! Define the grid to preprocess via GRID_NML namelist
+! -------------------------------------------------------------------- !
+&GRID_NML
+  GRID%NAME           =  'Global wave model GS256A'
+  GRID%NML            =  'params.nml'
+  GRID%TYPE           =  'SMCG'
+  GRID%COORD          =  'SPHE'
+  GRID%CLOS           =  'SMPL'
+  GRID%ZLIM           =  -0.10
+  GRID%DMIN           =  15.0
+/
+
+! -------------------------------------------------------------------- !
+! Define the rectilinear grid type via RECT_NML namelist
+! - only for RECT grids -
+! -------------------------------------------------------------------- !
+&RECT_NML
+  RECT%NX             =  512
+  RECT%NY             =  384
+  RECT%SX             =  0.70312500
+  RECT%SY             =  0.46875000
+  RECT%X0             =  0.35156250
+  RECT%Y0             =  -89.76562500
+/
+
+! -------------------------------------------------------------------- !
+! Define the spherical multiple-cell grid via SMC_NML namelist
+! - only for SMC grids -
+! -------------------------------------------------------------------- !
+&SMC_NML
+  SMC%MCELS%FILENAME  =  'ww3Cels.dat'
+  SMC%ISIDE%FILENAME  =  'ww3GISide.dat'
+  SMC%JSIDE%FILENAME  =  'ww3GJSide.dat'
+  SMC%SUBTR%FILENAME  =  'ww3Obstr.dat'
+  SMC%MBARC%FILENAME  =  'ww3ArcCels.dat'
+  SMC%AISID%FILENAME  =  'ww3AISide.dat'
+  SMC%AJSID%FILENAME  =  'ww3AJSide.dat'
+/
+
+! -------------------------------------------------------------------- !
+! Define the output boundary points via OUTBND_COUNT_NML and
+!                                       OUTBND_LINE_NML namelist
+! - only for RECT and CURV grids -
+! Dev global nesting:
+!  UK (AMM15SL2): 1-4
+!
+! -------------------------------------------------------------------- !
+&OUTBND_COUNT_NML
+  OUTBND_COUNT%N_LINE = 4
+/
+&OUTBND_LINE_NML
+ OUTBND_LINE(1) = -10.88275 -7.2875 0.027 0.0 438
+ OUTBND_LINE(2) = -10.85575 10.8295 0.027 0.0 567
+ OUTBND_LINE(3) = -10.88275 -7.2605 0.0 0.027 671
+ OUTBND_LINE(4) = 8.77325 2.8915 0.0 0.027 35
+/
+
+! -------------------------------------------------------------------- !
+! WAVEWATCH III - end of namelist                                      !
+! -------------------------------------------------------------------- !

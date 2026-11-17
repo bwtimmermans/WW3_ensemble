@@ -1,0 +1,12 @@
+$ Point output: Table of parameters
+$ Point <buoy_num>: Buoy <buoy_name>
+$ ---------------------------------------------
+   <start_year><start_month>01 000000  <stepping>  <num_outs>
+$
+   <buoy_num>
+  -1
+$ Output type (2=Table).
+  2
+$ Subtype (2=mean wave,3=nondimensional), filename.
+  2  23
+

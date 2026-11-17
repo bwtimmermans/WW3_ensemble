@@ -1,0 +1,32 @@
+&PSMC
+    DTIMS=108000.0,
+    RFMAXD=36.0,
+    AVERG=.TRUE.,
+    LvSMC=1
+/
+
+&SIN4
+    BETAMAX=1.39,
+    TAUWSHELTER=0.30
+/
+
+&SBT1
+    GAMMA=-0.038
+/
+
+&SDB1
+    BJALFA=0.2
+/
+
+&MISC
+    CICE0=0.5,
+    CICEN=0.5,
+    FLAGTR=2,
+    PTM=3,
+/
+
+&ROTB
+    BPLAT(1)=37.50, 
+    BPLON(1)=177.50
+/
+END OF NAMELISTS

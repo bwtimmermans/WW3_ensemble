@@ -1,0 +1,14 @@
+&FORCING_NML
+FORCING%TIMESTART = '<start_year><start_month>01 000000' 
+FORCING%TIMESTOP = '<start_year><start_month><stop_day> 230000' 
+FORCING%FIELD%WINDS = t 
+FORCING%GRID%LATLON = t 
+/
+
+&FILE_NML 
+FILE%FILENAME = 'wind.nc'
+FILE%LONGITUDE = 'longitude' 
+FILE%LATITUDE = 'latitude' 
+FILE%VAR(1) = 'u10' 
+FILE%VAR(2) = 'v10'
+/

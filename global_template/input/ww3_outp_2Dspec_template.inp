@@ -1,0 +1,12 @@
+$ WAVEWATCH III Point output post-processing
+$ Point 1: NDBC 41001
+$ ------------------------------------------
+  <start_day> <start_hour>  <stepping>  <num_outs>
+$
+   <buoy_num>
+   -1
+$ ( 1 = spectra )
+  1
+$ ( 1 = print plots, 2 = 1D spectra, 3 = transfer file, 4 = spectral partitioning)
+  3 0. 0. 50 F
+
