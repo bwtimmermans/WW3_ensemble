@@ -1,9 +1,9 @@
 # WW3_ensemble
 
 ### Background
-Sell script to generate multiple WavewatchIII jobs.
+Shell script to generate multiple <href a="https://github.com/NOAA-EMC/WW3">WavewatchIII</href> jobs.
 
-This shell script originated during my PhD (2010), involving exploration of the effects of parameter perturbations within WavewatchIII®.
+I developed this shell script during my PhD (2010), due to a need to explore the effects of parameter perturbations within the WavewatchIII® numerical model.
 Ensemble runs were required, each employing a different set of input parameters via input namelists.
 These scripts readily generalise to any code base run in a shell environment.
 
