@@ -1,13 +1,13 @@
 # WW3_ensemble
 
 ### Background
-Shell script to generate multiple <href a="https://github.com/NOAA-EMC/WW3">WavewatchIII</href> jobs.
+Shell script to generate multiple <a href="https://github.com/NOAA-EMC/WW3">WavewatchIII®</a> jobs.
 
 I developed this shell script during my PhD (2010), due to a need to explore the effects of parameter perturbations within the WavewatchIII® numerical model.
 Ensemble runs were required, each employing a different set of input parameters via input namelists.
 These scripts readily generalise to any code base run in a shell environment.
 
-This revision was developed as part of a contribution to the third phase (2024-2026) of the COordinated Wave CLImate Project (COWCLIP) by Ben Timmermans and Lucy Bricheno at the National Oceanography Centre, U.K.
+This revision was developed as part of a contribution to the third phase (2024-2026) of the COordinated Wave CLImate Project (<a href="https://community.wmo.int/site/knowledge-hub/programmes-and-initiatives/marine-services/coordinated-ocean-wave-climate-project-cowclip">COWCLIP</a>) by Ben Timmermans and Lucy Bricheno at the <a href="https://www.noc.ac.uk/">National Oceanography Centre, U.K.</a>
 
 This code is freely available under the GNU GENERAL PUBLIC LICENSE Version 3.
 
